@@ -17,6 +17,7 @@ searchBtn.addEventListener("click", async () => {
 
   if (!city) {
     showError("Please enter a city name");
+    searchInput.value = "";
     return;
   }
 
@@ -34,7 +35,7 @@ searchBtn.addEventListener("click", async () => {
 
 function displayWeather(data, city) {
   const card = document.querySelector(".weather-card-custom");
-
+  searchInput.value = "";
   const cityEl = card.querySelector("h3");
   const infoEls = card.querySelectorAll("p");
   const iconEl = card.querySelector("img");
