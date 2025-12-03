@@ -59,6 +59,8 @@ Kaniya, Christian and Homam are front-end developers who build applications in t
 
 ## Works Cited:
 
+- [Tailwind CSS Documentation]https://tailwindcss.com
+- [OpenWeatherMap]Icons] https://openweathermap.org
 - [Nominatim](https://nominatim.org/release-docs/develop/api/Overview/)
 - [MDN WebDocs](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent/)
 - [GeeksforGeeks](https://www.geeksforgeeks.org/javascript/build-a-weather-app-in-html-css-javascript/)
