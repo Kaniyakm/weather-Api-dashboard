@@ -6,15 +6,15 @@ const spinner = document.getElementById("loading");
 spinner.style.display = "none";
 
 function showError(message) {
-  //declares functions
-  errorMsg.textContent = message; //targerting the text content of DOM elemnt
-  errorMsg.style.display = "block"; // display error directly
-  spinner.style.display = "none"; // hide spinner
+  errorMsg.textContent = message;
+  errorMsg.style.display = "block";
+  spinner.style.display = "none";
 }
 
 searchBtn.addEventListener("click", async () => {
   const city = searchInput.value.trim();
   errorMsg.style.display = "none";
+
   if (!city) {
     showError("Please enter a city name");
     return;
@@ -29,30 +29,20 @@ searchBtn.addEventListener("click", async () => {
     showError(err.message);
   } finally {
     spinner.style.display = "none";
-    errorMsg.style.display = "none";
   }
 });
 
 function displayWeather(data, city) {
-  const container = document.getElementById("weather-container");
+  const card = document.querySelector(".weather-card-custom");
 
-  container.innerHTML = `
-    <article class="weather-card">
-      <h3 class="weather-city">${city}</h3>
+  const cityEl = card.querySelector("h3");
+  const infoEls = card.querySelectorAll("p");
+  const iconEl = card.querySelector("img");
 
-      <p class="weather-temp">
-        <strong>Temperature:</strong> ${data.temperature} °C
-      </p>
+  cityEl.textContent = city;
+  infoEls[0].textContent = `temp: ${data.temperature}°c`;
+  infoEls[1].textContent = `condition: ${data.condition}`;
+  infoEls[2].textContent = `humidity: ${data.humidity}%`;
 
-      <p class="weather-condition">
-        <strong>Condition:</strong> ${data.condition}
-      </p>
-
-      <p class="weather-extra">
-        <strong>Humidity:</strong> ${data.humidity}%
-      </p>
-    </article>
-  `;
-
-  spinner.style.display = "none";
+  iconEl.src = "http://openweathermap.org/img/wn/01d@2x.png";
 }
