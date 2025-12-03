@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mini Weather Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+  <link rel="stylesheet" href="styles.css" />
+  
+  <script src="script.js" defer></script> <!-- Your JS will handle: (- fetch() / async/await - updating/loading/error- injecting real data into cards
+  -->
+
+</head>
+
+<body>
+  <!-- =========================
+       1. HEADER
+  ========================== -->
+  <header class="app-header">
+    <h1>Mini Weather Dashboard</h1>
+    <p>Search for a city to see the current weather.</p>
+  </header>
+
+  <!-- =========================
+       2. MAIN CONTENT
+  ========================== -->
+  <main class="app-main">
+   
+    <!-- =========================
+         Search Section
+    ========================== -->
+    <section class="search-section">
+      <!-- You can style this as a bar with input + button -->
+      <label for="city-input" class="visually-hidden">Search by city</label>
+      <input
+        type="text"
+        id="city-input"
+        placeholder="Enter city name (e.g., New York)"
+        autocomplete="off"
+      />
+      <button id="search-btn">Search</button>
+    </section>
+
+    <!-- =========================
+         Loading Indicator
+         (hidden by default with CSS)
+    ========================== -->
+    <div id="loading" class="loading" aria-live="polite">
+      Loading weather data...
+    </div>
+
+    <!-- =========================
+         Error Message
+         (empty by default; JS will update text)
+    ========================== -->
+    <p id="error-message" class="error-message" aria-live="assertive"></p>
+
+    <!-- =========================
+         Weather Cards Container
+         JS will fill/update these cards
+    ========================== -->
+    <section id="weather-section" class="weather-section">
+      <h2>Weather Results</h2>
+
+      <div id="weather-container" class="weather-container">
+        <!-- Card 1 - Placeholder; JS will replace or update -->
+        <article class="weather-card">
+          <h3 class="weather-city">City Name 1</h3>
+          <p class="weather-temp">Temp: -- °C</p>
+          <p class="weather-condition">Condition: --</p>
+          <p class="weather-extra">Humidity: --%</p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="weather-card">
+          <h3 class="weather-city">City Name 2</h3>
+          <p class="weather-temp">Temp: -- °C</p>
+          <p class="weather-condition">Condition: --</p>
+          <p class="weather-extra">Humidity: --%</p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="weather-card">
+          <h3 class="weather-city">City Name 3</h3>
+          <p class="weather-temp">Temp: -- °C</p>
+          <p class="weather-condition">Condition: --</p>
+          <p class="weather-extra">Humidity: --%</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+
+</body>
+</html>
