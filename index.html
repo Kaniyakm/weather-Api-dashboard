@@ -5,124 +5,117 @@
   <title>Mini Weather Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- =============================================================
-       TAILWIND CSS (Utility-first framework)
-  ============================================================== -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+<<<<<<< HEAD
+  <!-- FontAwesome Icons (Needed for your <i class="fas ..."> icons) -->
+  <script src="https://kit.fontawesome.com/a2e8606c78.js" crossorigin="anonymous"></script>
+=======
   
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="./events/events.css" />
   <script src="./events/events.js" defer></script>
   <script src="script.js" defer></script> <!-- Your JS will handle: (- fetch() / async/await - updating/loading/error- injecting real data into cards
   -->
+>>>>>>> a1b7e021878deea3eee4677fbac7e2a12915fda9
 
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- JavaScript Logic (fetching, rendering, animations) -->
+  <script src="script.js" defer></script>
 </head>
 
-<body>
-  <!-- =========================
-       1. HEADER
-  ========================== -->
- <header class="text-center mb-8 animate-fadeInUp">
-    <h1 class="text-4xl font-bold text-blue-700 dark:text-blue-300 drop-shadow glow-title">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
+
+  <!-- HEADER -->
+  <header class="text-center mb-10 animate-fadeInUp">
+    <h1 class="text-4xl font-bold text-blue-700 dark:text-blue-300 glow-title">
       Mini Weather Dashboard
     </h1>
 
     <p class="text-gray-700 dark:text-gray-300 mt-2">
-      Search any city to view weather information.
+      Search any city to view weather details.
     </p>
 
     <button id="theme-toggle"
-      class="mt-4 bg-gray-800 text-white dark:bg-white dark:text-gray-800 
-             px-4 py-2 rounded-md shadow">
+      class="mt-4 bg-gray-800 text-white dark:bg-white dark:text-gray-800 px-4 py-2 rounded-md shadow">
       Toggle Dark Mode
     </button>
   </header>
-  <!-- =========================
-       2. MAIN CONTENT
-  ========================== -->
-  <main class="app-main">
-   
-    <!-- =========================
-         Search Section
-    ========================== -->
-     <section class="flex flex-col sm:flex-row items-center gap-4 mb-6 
-                  w-full max-w-xl animate-fadeInUp">
 
-      <!-- You can style this as a bar with input + button -->
-      <label for="city-input" class="visually-hidden">Search by city</label>
+  <!-- SEARCH SECTION -->
+  <main class="flex flex-col items-center">
+
+    <section class="flex flex-col sm:flex-row items-center gap-4 mb-6 w-full max-w-xl animate-fadeInUp">
+
+      <!-- Accessible Label -->
+      <label for="city-input" class="sr-only">Search by city</label>
+
       <input 
-      id="city-input"
-      type="text"
-      placeholder="Enter city name..."
-      class="w-full px-4 py-3 rounded-md border border-gray-300 
-             dark:border-gray-700 bg-white dark:bg-gray-900 
-             text-gray-900 dark:text-gray-100 shadow-sm input-glow"
-    />
+        id="city-input"
+        type="text"
+        placeholder="Enter city name..."
+        class="w-full px-4 py-3 rounded-md border border-gray-300 
+               dark:border-gray-700 bg-white dark:bg-gray-900 
+               text-gray-900 dark:text-gray-100 shadow-sm input-glow"
+      />
+
       <button id="search-btn"
-      class="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold 
-             hover:bg-blue-700 active:scale-95 transition shadow"
-      >Search
-    </button>
+        class="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold 
+               hover:bg-blue-700 active:scale-95 transition shadow">
+        Search
+      </button>
     </section>
 
-    <!-- =========================
-         Loading Indicator
-         (hidden by default with CSS)
-    ========================== -->
-     <div id="loading" class="hidden flex-col items-center mt-6 animate-fadeInUp">
-    <div class="spinner-custom"></div>
-    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Fetching weather...</p>
-  </div>
-
-<!-- HOMAN/CHRISTIAN COMPLETE CODE FOR LINE 77-112-->
-
-    <!-- =========================
-         Error Message
-         (empty by default; JS HOMAN/CHRISTIAN will update text)
-    ========================== -->
-    <p id="error-message" class="error-message" aria-live="assertive"></p>
-
-    <!-- =========================
-         Weather Cards Container
-         JS will fill/update these cards
-    ========================== -->
-    <section id="weather-section" class="weather-section">
-      <h2>Weather Results</h2>
-
-      <div id="weather-container" class="weather-container">
-        <!-- Card 1 - Placeholder; JS will replace or update -->
-       
-        <article 
-        class="weather-card-custom bg-white dark:bg-gray-800 rounded-xl shadow-lg 
-               p-6 border border-gray-200 dark:border-gray-700">
-        
-        <h3 class="text-xl font-bold text-blue-700 dark:text-blue-300 mb-2">
-          <i class="fas fa-map-marker-alt mr-2"></i> City Name
-        </h3>
-
-        <p class="text-gray-700 dark:text-gray-300">
-          <i class="fas fa-thermometer-half text-red-500"></i> Temp: --°C
-        </p>
-
-        <p class="text-gray-700 dark:text-gray-300">
-          <i class="fas fa-cloud text-yellow-500"></i> Condition: --
-        </p>
-
-        <p class="text-gray-700 dark:text-gray-300">
-          <i class="fas fa-tint text-blue-500"></i> Humidity: --%
-        </p>
-
-        <!-- Weather Icon -->
-        <img src="http://openweathermap.org/img/wn/01d@2x.png"
-             class="w-20 h-20 mx-auto mt-4 weather-icon-float"
-             alt="weather icon" />
-
-      </article>
-
+    <!-- LOADING SPINNER -->
+    <div id="loading" class="hidden flex-col items-center mt-6 animate-fadeInUp">
+      <div class="spinner-custom"></div>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Fetching weather...</p>
     </div>
-  </section>
 
+    <!-- ERROR MESSAGE -->
+    <p id="error-message" class="error-message text-red-500 text-center mt-4" aria-live="assertive"></p>
+
+    <!-- WEATHER RESULTS -->
+    <section id="weather-section" class="w-full max-w-5xl mt-8 px-4">
+      <h2 class="text-2xl font-bold mb-4 text-center">Weather Results</h2>
+
+      <div id="weather-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+        <!-- SAMPLE PLACEHOLDER CARD (JS will delete/replace this) -->
+        <article 
+          class="weather-card-custom bg-white dark:bg-gray-800 rounded-xl shadow-lg 
+                 p-6 border border-gray-200 dark:border-gray-700">
+          
+          <h3 class="text-xl font-bold text-blue-700 dark:text-blue-300 mb-2">
+            <i class="fas fa-map-marker-alt mr-2"></i> City Name
+          </h3>
+
+          <p class="text-gray-700 dark:text-gray-300">
+            <i class="fas fa-thermometer-half text-red-500"></i> Temp: --°C
+          </p>
+
+          <p class="text-gray-700 dark:text-gray-300">
+            <i class="fas fa-cloud text-yellow-500"></i> Condition: --
+          </p>
+
+          <p class="text-gray-700 dark:text-gray-300">
+            <i class="fas fa-tint text-blue-500"></i> Humidity: --%
+          </p>
+
+          <!-- WEATHER ICON (JS will replace src + add sun/cloud animations) -->
+          <img 
+            src="http://openweathermap.org/img/wn/01d@2x.png"
+            class="w-20 h-20 mx-auto mt-4 weather-icon-float"
+            alt="weather icon" />
+        </article>
+
+      </div>
+    </section>
+
+  </main>
 
 </body>
 </html>
