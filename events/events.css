@@ -3,3 +3,11 @@
   font-weight: 600;
   margin-top: 10px;
 }
+
+.hidden {
+  display: none;
+}
+
+.loading {
+  display: block;
+}
