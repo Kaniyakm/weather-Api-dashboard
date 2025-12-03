@@ -39,9 +39,10 @@ Users can type in a city name, for example "London" into the search box. The das
 * Add icons for sun, rain, clouds in the weather cards
 
 ## <a name="deployment"></a>Deployed Link
+View the live website here:
 [Github Pages]()
 
-* You can view the repository:
+You can view the repository:
 [Github.com](https://github.com/Kaniyakm/weather-Api-dashboard)
 
 
