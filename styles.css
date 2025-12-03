@@ -1,0 +1,65 @@
+/* =============================================================
+   CUSTOM CSS FOR WEATHER DASHBOARD
+   - Enhances Tailwind UI
+   - Adds weather effects
+   - Adds floating icons
+   - Adds card hover styling
+   - Adds spinner animation
+   - Adds input focus glow
+============================================================= */
+
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb {
+  background: #60a5fa;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #e5e7eb;
+}
+
+/* Card Hover Effect */
+.weather-card-custom {
+  transition: transform .3s, box-shadow .3s;
+}
+.weather-card-custom:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0,0,0,.20);
+}
+
+/* Floating Weather Icon */
+@keyframes float {
+  0% { transform: translateY(0);}
+  50% { transform: translateY(-6px);}
+  100% { transform: translateY(0);}
+}
+.weather-icon-float {
+  animation: float 2.5s ease-in-out infinite;
+}
+
+/* Loading Spinner */
+.spinner-custom {
+  width: 40px; height: 40px;
+  border: 4px solid #d1d5db;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg);} }
+
+/* Input Glow */
+.input-glow:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(96,165,250,0.7);
+}
+
+/* Title Glow */
+.glow-title {
+  text-shadow: 0px 0px 8px rgba(96,165,250,0.6);
+}
