@@ -14,6 +14,7 @@ function showError(message) {
 
 searchBtn.addEventListener("click", async () => {
   const city = searchInput.value.trim();
+  errorMsg.style.display = "none";
   if (!city) {
     showError("Please enter a city name");
     return;
