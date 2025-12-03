@@ -29,7 +29,7 @@ const getConditionName = (code) => {
     80: 'Slight rain showers', 81: 'Moderate rain showers', 82: 'Violent rain showers',
     95: 'Thunderstorm', 96: 'Thunderstorm with hail', 99: 'Heavy thunderstorm'
   };
-  return conditions[code] || 'Unknown';
+  return conditions[code] || 'Unknown';   //Converts WMO code to English 
 };
 
 return {
