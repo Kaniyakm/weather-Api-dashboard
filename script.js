@@ -20,10 +20,29 @@ let weatherData = await weatherRes.json();  //converts to JS object
 if (weatherData.error) {
 throw new Error(weatherData.reason);    // error handling for bad API requests
 }
+const getConditionName = (code) => {
+  const conditions = {
+    0: 'Clear sky', 1: 'Mainly clear', 2: 'Partly cloudy', 3: 'Overcast',
+    45: 'Fog', 48: 'Rime fog', 51: 'Light drizzle', 53: 'Moderate drizzle', 55: 'Dense drizzle',
+    61: 'Slight rain', 63: 'Moderate rain', 65: 'Heavy rain',
+    71: 'Slight snow', 73: 'Moderate snow', 75: 'Heavy snow',
+    80: 'Slight rain showers', 81: 'Moderate rain showers', 82: 'Violent rain showers',
+    95: 'Thunderstorm', 96: 'Thunderstorm with hail', 99: 'Heavy thunderstorm'
+  };
+  return conditions[code] || 'Unknown';   //Converts WMO code to English 
+};
+
 return {
-temperature: weatherData.hourly.temperature_2m[0],
-humidity: weatherData.hourly.relative_humidity_2m[0],   
-condition: weatherData.hourly.weather_code[0]};    // grabs current weather, index[0] = right now. 
+  temperature: weatherData.hourly.temperature_2m[0],
+  humidity: weatherData.hourly.relative_humidity_2m[0],
+  condition: getConditionName(weatherData.hourly.weather_code[0])
+};
+
+return {
+  temperature: weatherData.hourly.temperature_2m[0],
+  humidity: weatherData.hourly.relative_humidity_2m[0],  
+  condition: getConditionName(weatherData.hourly.weather_code[0])
+};    // grabs current weather, index[0] = right now. 
 } catch (error) {
     throw new Error(error.message);  // additional error handling for any other errors
   } }
