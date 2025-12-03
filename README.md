@@ -29,7 +29,11 @@ Users can type in a city name, for example "London" into the search box. The das
 
 
 ## <a name="design"></a>Design
-* Design elements implemented using HTML5 and CSS3. 
+* Design elements implemented using HTML5 and CSS3.
+
+## WireFrame
+* See logic flow of API call here:
+[API call logic flow](https://lucid.app/lucidchart/9a593b7b-315c-4aa8-acbe-395429b91a05/edit?beaconFlowId=918841858451BCB3&invitationId=inv_4843b929-4a2c-4c45-8633-fd55146c7f8d&page=0_0#)
 
 
 ## <a name="nextsteps"></a>Project Next Steps
